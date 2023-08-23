@@ -12,7 +12,5 @@ const options = {
       console.log(selectedDates[0]);
     },
   };
-  
-  flatpickr(datetimePicker, options);
 
-  console.log(datetimePicker)
+  flatpickr(datetimePicker, options);
