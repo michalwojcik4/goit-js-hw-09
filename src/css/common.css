@@ -16,3 +16,45 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/*first task*/
+.box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10%;
+}
+
+.box__btn {
+  border: none;
+  padding: 15px 32px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/*second task*/
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: 80px;
+  font-weight: bold;
+  color: #555555;
+}
+
+.label {
+  font-weight: bold;
+}
