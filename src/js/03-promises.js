@@ -6,13 +6,14 @@ form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(e){
   e.preventDefault();
-  const delayFirst = parseFloat(form.elements.delay.value);
+  const delay = parseFloat(form.elements.delay.value);
   const step = parseFloat(form.elements.step.value);
   const amount = parseFloat(form.elements.amount.value);
-
-  for(let i = 1; i <= amount; i++){
-    const nextDelay = delayFirst + i * step;
-    createPromise(i, nextDelay).then(({position, delay}) => {
+  
+  for(let i = 0; i < amount; i++){
+    const position = i + 1;
+    const nextDelay = delay + i * step;
+    createPromise(position, nextDelay).then(({position, delay}) => {
       Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
     }).catch(({position, delay}) => {
       Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
