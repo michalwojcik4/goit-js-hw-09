@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const datetimePicker = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button[data-start]');
@@ -18,7 +18,7 @@ const options = {
     onClose(selectedDates) {
       if(selectedDates[0] <= options.defaultDate){
         startBtn.setAttribute('disabled', 'disabled');
-        return Notiflix.Notify.warning('Please choose a date in the future')
+        return Notify.failure('Please choose a date in the future')
       }
       startBtn.removeAttribute('disabled')
     },
@@ -40,7 +40,7 @@ function startTimer(){
     if(timeDifference <= 0){
       clearInterval(interval);
       datetimePicker.removeAttribute('disabled');
-      return Notiflix.Notify.success('Sukces!');
+      return Notify.success('Sukces!');
     }
 
     days.textContent = addLeadingZero(convertMs(timeDifference).days);
