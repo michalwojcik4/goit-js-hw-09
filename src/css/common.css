@@ -34,3 +34,27 @@ img {
   display: inline-block;
   cursor: pointer;
 }
+
+/*second task*/
+.timer {
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.field {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.value {
+  color: #555;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.label {
+  font-weight: 700;
+}
